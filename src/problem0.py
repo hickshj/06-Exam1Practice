@@ -18,8 +18,8 @@ import time
 
 def main():
     """ Calls the   TEST   functions in this module. """
-    # run_test_problem0a()
-    # run_test_problem0b()
+    run_test_problem0a()
+    run_test_problem0b()
     run_test_problem0c()
 
 
@@ -314,7 +314,7 @@ def problem0c(circle, n, window):
       :type window: rg.RoseWindow
     """
     # ------------------------------------------------------------------
-    # TODO: 5. Implement and test this function.
+    # Done: 5. Implement and test this function.
     #          Tests have been written for you (above).
     #
     ####################################################################
@@ -322,6 +322,15 @@ def problem0c(circle, n, window):
     #   renders with a half-second pause after rendering.
     ####################################################################
     # ------------------------------------------------------------------
+    circle.attach_to(window)
+    rad = circle.radius
+    d = rad * 2
+    q = circle.center.clone()
+    for k in range(n + 1):
+        c1 = rg.Circle(rg.Point(q.x, q.y), rad)
+        c1.attach_to(window)
+        q.x = q.x + d
+        window.render(.5)
 
 
 ###############################################################################
