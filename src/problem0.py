@@ -8,8 +8,8 @@ These problems illustrate concepts that previous problems have not emphasized:
   -- animation (Problem 0c)
 
 Authors: David Mutchler, Vibha Alangar, Valerie Galluzzi, Mark Hays,
-         Amanda Stouder, their colleagues and PUT_YOUR_NAME_HERE.
-"""  # TODO: 1. PUT YOUR NAME IN THE ABOVE LINE.
+         Amanda Stouder, their colleagues and Hunter Hicks.
+"""  # Done: 1. PUT YOUR NAME IN THE ABOVE LINE.
 
 import rosegraphics as rg
 import testing_helper
@@ -18,13 +18,13 @@ import time
 
 def main():
     """ Calls the   TEST   functions in this module. """
-    run_test_problem0a()
-    run_test_problem0b()
+    # run_test_problem0a()
+    # run_test_problem0b()
     run_test_problem0c()
 
 
 ########################################################################
-# TODO: 2.  READ the green doc-string for the:
+# Done: 2.  READ the green doc-string for the:
 #   - is_prime
 #   - sum_of_digits
 # functions defined below.  You do NOT need to understand their
@@ -159,7 +159,7 @@ def problem0a(n):
            since (2 + 4 + 6) is 12, which is NOT odd.
     """
     # ------------------------------------------------------------------
-    # TODO: 3. Implement and test this function.
+    # Done: 3. Implement and test this function.
     #          Tests have been written for you (above).
     #
     ####################################################################
@@ -176,6 +176,13 @@ def problem0a(n):
     #        Simply try a few examples to convince yourself of this.
     #        ASK FOR HELP if you do not understand this hint.
     # ------------------------------------------------------------------
+    n = sum_of_digits(n)
+    q = n % 2
+    if q == 1:
+        m = True
+    else:
+        m = False
+    return m
 
 
 def run_test_problem0b():
@@ -230,7 +237,7 @@ def problem0b(n):
            since there are 46 primes between 2 and 200.
      """
     # ------------------------------------------------------------------
-    # TODO: 4. Implement and test this function.
+    # Done: 4. Implement and test this function.
     #          Tests have been written for you (above).
     #
     ####################################################################
@@ -239,6 +246,15 @@ def problem0b(n):
     #    **  use (call) the   is_prime   function that is DEFINED ABOVE.
     ####################################################################
     # ------------------------------------------------------------------
+    m = n - 2
+    w = n - m
+    total = 0
+    for k in range(n - 1):
+        q = is_prime(w)
+        if q is True:
+            total = total + 1
+        w = w + 1
+    return total
 
 
 def run_test_problem0c():
