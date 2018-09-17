@@ -2,8 +2,8 @@
 PRACTICE Exam 1, problem 1.
 
 Authors: David Mutchler, Vibha Alangar, Valerie Galluzzi, Mark Hays,
-         Amanda Stouder, their colleagues and PUT_YOUR_NAME_HERE.
-"""  # TODO: 1. PUT YOUR NAME IN THE ABOVE LINE.
+         Amanda Stouder, their colleagues and Done.
+"""  # Done: 1. PUT YOUR NAME IN THE ABOVE LINE.
 
 ########################################################################
 # Students:
@@ -27,17 +27,18 @@ Authors: David Mutchler, Vibha Alangar, Valerie Galluzzi, Mark Hays,
 
 import testing_helper
 import time
+import math
 
 
 def main():
     """ Calls the   TEST   functions in this module. """
     run_test_problem1a()
-    run_test_problem1b()
-    run_test_problem1c()
+    # run_test_problem1b()
+    # run_test_problem1c()
 
 
 ########################################################################
-# TODO: 2.  READ the green doc-string for the:
+# Done: 2.  READ the green doc-string for the:
 #   - is_prime
 #   - sum_of_digits
 # functions defined below.  You do NOT need to understand their
@@ -105,7 +106,7 @@ def sum_of_digits(number):
 def run_test_problem1a():
     """ Tests the   problem1a   function. """
     # ------------------------------------------------------------------
-    # TODO: 3. Implement this TEST function.
+    # Done: 3. Implement this TEST function.
     #   It TESTS the  problem1a  function defined below.
     #   Include at least **   4   ** tests (we wrote two for you).
     # ------------------------------------------------------------------
@@ -130,8 +131,7 @@ def run_test_problem1a():
 
     # Test 2:
     expected = 1.278  # This is APPROXIMATELY the correct answer.
-    print_expected_result_of_test([30, 100], expected, test_results,
-                                  format_string)
+    print_expected_result_of_test([30, 100], expected, test_results, format_string)
     actual = problem1a(30, 100)
     print_actual_result_of_test(expected, actual, test_results)
 
@@ -144,6 +144,18 @@ def run_test_problem1a():
     #   print('Test 1 expected:', expected)
     #   print('       actual:  ', actual)
     #  ------------------------------------------------------------------
+
+    # Test 3
+    expected = -0.0581
+    actual = problem1a(1, 5)
+    print('Test 3 expected:', expected)
+    print('       actual:  ', actual)
+
+    # Test 4
+    expected = -0.2013
+    actual = problem1a(5, 10)
+    print('Test 4 expected:', expected)
+    print('       actual:  ', actual)
 
 
 def problem1a(m, n):
@@ -164,7 +176,7 @@ def problem1a(m, n):
       -- If m is 30 and n is 100, the correct answer is about 1.278.
     """
     # ------------------------------------------------------------------
-    # TODO: 4. Implement and test this function.
+    # Done: 4. Implement and test this function.
     #   Note that you should write its TEST function first (above).
     # ------------------------------------------------------------------
     # ------------------------------------------------------------------
@@ -172,6 +184,14 @@ def problem1a(m, n):
     #    DIFFICULTY:      5
     #    TIME ESTIMATE:   10 minutes.
     # ------------------------------------------------------------------
+    total = 0
+    w = (n ** 2) - (m ** 2)
+    e = m ** 2
+    for k in range(w + 1):
+        q = math.sin(e)
+        total = total + q
+        e = e + 1
+    return total
 
 
 def run_test_problem1b():
@@ -249,7 +269,6 @@ def run_test_problem1c():
     print_expected_result_of_test([11], expected, test_results, format_string)
     actual = problem1c(11)
     print_actual_result_of_test(expected, actual, test_results)
-
 
     # Test 3:
     expected = 33
@@ -354,7 +373,6 @@ if USE_COLORING:
 else:
     # noinspection PyShadowingBuiltins
     print = testing_helper.print_uncolored
-
 
 # -----------------------------------------------------------------------------
 # Calls  main  to start the ball rolling.
