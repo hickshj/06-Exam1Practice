@@ -199,13 +199,14 @@ def problem2b(rect, n, delta, win):
     rect.attach_to(win)
     win.render()
 
-
     for k in range(n - 1):
         ulc = rect.get_upper_left_corner()
         lrc = rect.get_lower_right_corner()
         rect = rg.Rectangle(rg.Point((ulc.x - delta), (ulc.y - delta)), rg.Point((lrc.x + delta), (lrc.y + delta)))
         rect.attach_to(win)
         win.render()
+
+
 # ----------------------------------------------------------------------
 # Calls  main  to start the ball rolling.
 # ----------------------------------------------------------------------
