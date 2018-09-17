@@ -32,9 +32,9 @@ import math
 
 def main():
     """ Calls the   TEST   functions in this module. """
-    # run_test_problem1a()
+    run_test_problem1a()
     run_test_problem1b()
-    # run_test_problem1c()
+    run_test_problem1c()
 
 
 ########################################################################
@@ -279,6 +279,7 @@ def problem1b(m, f):
         m = m + 1
     return total
 
+
 def run_test_problem1c():
     """ Tests the   problem1c   function. """
     print()
@@ -357,7 +358,7 @@ def problem1c(n):
            and the sum of the digits in 223092870 is 33.
     """
     # ------------------------------------------------------------------
-    # TODO: 7. Implement and test this function.
+    # Done: 7. Implement and test this function.
     #          Tests have been written for you (above).
     #
     ####################################################################
@@ -371,6 +372,15 @@ def problem1c(n):
     #    DIFFICULTY:      7
     #    TIME ESTIMATE:   15 to 20 minutes.
     # ------------------------------------------------------------------
+    total = 1
+    q = n - 2
+    for k in range(q + 1):
+        numb = k + 2
+        prime = is_prime(numb)
+        if prime is True:
+            total = numb * total
+    total1 = sum_of_digits(total)
+    return total1
 
 
 ###############################################################################
