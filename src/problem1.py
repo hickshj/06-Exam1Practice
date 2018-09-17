@@ -32,8 +32,8 @@ import math
 
 def main():
     """ Calls the   TEST   functions in this module. """
-    run_test_problem1a()
-    # run_test_problem1b()
+    # run_test_problem1a()
+    run_test_problem1b()
     # run_test_problem1c()
 
 
@@ -197,7 +197,7 @@ def problem1a(m, n):
 def run_test_problem1b():
     """ Tests the   problem1b   function. """
     # ------------------------------------------------------------------
-    # TODO: 5. Implement this TEST function.
+    # Done: 5. Implement this TEST function.
     #   It TESTS the  problem1b  function defined below.
     #   Include at least **   4   ** tests.  Use the usual form:
     #
@@ -214,6 +214,30 @@ def run_test_problem1b():
     print('--------------------------------------------------')
     print('Testing the   problem1b   function:')
     print('--------------------------------------------------')
+
+    # Test 1
+    expected = 3
+    actual = problem1b(3, 7)
+    print('Test 1 expected:', expected)
+    print('       actual:  ', actual)
+
+    # Test 2
+    expected = 2
+    actual = problem1b(5, 7)
+    print('Test 2 expected:', expected)
+    print('       actual:  ', actual)
+
+    # Test 3
+    expected = 3
+    actual = problem1b(7, 13)
+    print('Test 3 expected:', expected)
+    print('       actual:  ', actual)
+
+    # Test 4
+    expected = 7
+    actual = problem1b(3, 22)
+    print('Test 4 expected:', expected)
+    print('       actual:  ', actual)
 
 
 def problem1b(m, f):
@@ -233,7 +257,7 @@ def problem1b(m, f):
            since there are 44 primes between 5 and 200.
      """
     # ------------------------------------------------------------------
-    # TODO: 6. Implement and test this function.
+    # Done: 6. Implement and test this function.
     #   Note that you should write its TEST function first (above).
     #
     ####################################################################
@@ -246,7 +270,14 @@ def problem1b(m, f):
     #    DIFFICULTY:      5
     #    TIME ESTIMATE:   10 to 15 minutes.
     # ------------------------------------------------------------------
-
+    total = 0
+    q = f - m
+    for k in range(q + 1):
+        prime = is_prime(m)
+        if prime is True:
+            total = total + 1
+        m = m + 1
+    return total
 
 def run_test_problem1c():
     """ Tests the   problem1c   function. """
