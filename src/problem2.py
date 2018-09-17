@@ -7,6 +7,7 @@ Authors: David Mutchler, Vibha Alangar, Valerie Galluzzi, Mark Hays,
 
 import rosegraphics as rg
 
+
 ########################################################################
 # Students:
 #
@@ -102,7 +103,7 @@ def problem2a(circle, rectangle, window):
       :type window:    rg.RoseWindow
     """
     # ------------------------------------------------------------------
-    # TODO: 2. Implement and test this function.
+    # Done: 2. Implement and test this function.
     #          Tests have been written for you (above).
     # ------------------------------------------------------------------
     # ------------------------------------------------------------------
